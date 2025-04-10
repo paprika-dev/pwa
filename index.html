@@ -1,0 +1,260 @@
+<!-- I declare that the lab work here submitted is original
+except for source material explicitly acknowledged,
+and that the same or closely related material has not been
+previously submitted for another course.
+I also acknowledge that I am aware of University policy and
+regulations on honesty in academic work, and of the disciplinary
+guidelines and procedures applicable to breaches of such
+policy and regulations, as contained in the website.
+University Guideline on Academic Honesty:
+https://www.cuhk.edu.hk/policy/academichonesty/
+Student Name : Cheng Kwan Wai
+Student ID : 1155157943
+Class/Section : CSCI2720
+Date : 23 October 2024 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/icon.svg">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="script.js"></script>
+    <title>Vistá</title>
+</head>
+<body>
+    <header>
+      <div class="tagline">
+        <h1>Explore Beyond the Horizon</h1>
+        <p>Join Vistá on a journey that transcends the ordinary, 
+          as we guide you through breathtaking trails and unforgettable vistas.</p>
+      </div>
+    </header>
+
+    <div class="navbar-and-taskbar">
+
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand logo" href="#">Vistá</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#schedule">Schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#comments">Comments</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="taskbarToggleBtn btn btn-outline-primary" onclick="toggleTaskbar()">Show</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="taskbar">
+        <button type="button" class="btn btn-outline-dark" onclick="alignColumnText()">Task 1: Align</button>
+        <button type="button" class="btn btn-outline-dark" onclick="toSpotlight()">Task 2: Spotlight</button>
+        <button type="button" class="btn btn-outline-dark" onclick="bootstrapToast()">Task 3: Bootstrap Toast</button>
+      </div>
+
+    </div>
+    
+    <div class="spotlight">
+      <div>
+        <div class="spotlight-header">
+          <strong class="me-auto">Spotlight</strong>
+        </div>
+        <div class="spotlight-body">
+          The spotlights you add will be shown below.
+          <ul class="spotlightList"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+        <div class="toast-header">
+          <strong class="me-auto">Clock</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div id="liveToastText" class="toast-body"></div>
+      </div>
+    </div>
+
+    <main>
+      <section id="about-us">
+        <h2>About Us</h2>
+        <p>Vistá specializes in crafting unforgettable hiking experiences, both local and overseas, 
+          for those who love exploring the outdoors. 
+          Whether you are looking for guided tours, flexible itineraries, or private group options, 
+          our certified mountain guides are here to help you enjoy the great outdoors. 
+          Join us for an adventure that will leave you with great memories and a deeper love for hiking!</p>
+
+        <div class="container-fluid">
+          <div class="row gy-3">
+  
+            <div class="col-lg-4 card">
+              <img src="./images/a1_theDolomites.jpg" class="card-img-top" alt="the Dolomites">
+              <div class="card-body">
+                <h5 class="card-title">The Dolomites</h5>
+                <p class="card-text">
+                  The Dolomites in northern Italy are part of the Alps and 
+                  were listed as a World Natural and Cultural Heritage by UNESCO in 2009 for the unique and beautiful landscape. 
+                  The 10-day tour combines the fun of trekking and wine-tasting, in which you will 
+                  enjoy the rich, full-bodied flavors from local vineyards.
+                </p>
+              </div>
+            </div>
+          
+            <div class="col-lg-4 card">
+              <img src="./images/a2_GinzaTraverse.jpg" class="card-img-top" alt="the Panorama Ginza Traverse">
+              <div class="card-body">
+                <h5 class="card-title">Panorama Ginza Traverse</h5>
+                <p class="card-text">
+                  The Panorama Ginza Traverse spans across multiple peaks of the northen Japanese Alps,
+                  including Mt. Tsubakuro, Mt. Otensho, Mt. Jonen and Mt. Chogatake. On this route you will encounter
+                  beautiful summer alpine flowers and, if lucky, Japanese rock ptarmigan, also known as thunder birds (raichō).
+                </p>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 card">
+              <img src="./images/a3_YuShan.jpg" class="card-img-top" alt="YuShan">
+              <div class="card-body">
+                <h5 class="card-title">Yushan</h5>
+                <p class="card-text">
+                  Yushan, also known as Mount Jade, is the highest mountain in Taiwan with an elevation of 3,952m. 
+                  The region is habitat to many endemic species, such as Formosan blue magpie, Formosan rock macaque and 
+                  Formosan serow. In winter, you will get to see the magical views of snow-capped peaks.
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      
+      <section id="schedule">
+        <h2>Schedule</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Tour</th>
+              <th>Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>14/08/2024 - 18/10/2024</td>
+              <td>[Japan] The Panorama Ginza Traverse</td>
+              <td>HKD 19,500</td>
+              <td>Full</td>
+            </tr>
+            <tr>
+                <td>05/10/2024 - 17/10/2024</td>
+                <td>[Nepal] 13-day Everest Base Camp Trek</td>
+                <td>HKD 40,000</td>
+                <td>Full</td>
+            </tr>
+            <tr>
+              <td>02/12/2024 - 04/12/2024</td>
+              <td>[Taiwan] 3-day Yushan Peaks Trail</td>
+              <td>HKD 2,500</td>
+              <td><span class="limited-spot">Limited Spots</span></td>
+            </tr>
+            <tr>
+              <td>01/05/2025 - 10/05/2025</td>
+              <td>[Bhutan] Druk Path Trek</td>
+              <td>HKD 24,000</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>10/07/2025 - 19/07/2025</td>
+              <td>[Italy] Dolomites Wine Tasting Tour</td>
+              <td>HKD 35,900</td>
+              <td><span class="limited-spot">Limited Spots</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="application-remarks">
+          <aside class="side-note">
+            <p>
+              High altitude sickness can occur on rapid ascent to altitude above 2,500 metres, when the body fails to adjust to
+              reduced oxygen level. Main symtoms include headache, loss of appetite, fatique and dizziness. Proper acclimatization is essential.
+            </p>
+          </aside>
+          <p>
+            Ready to embark on an unforgettable hiking adventure? Contact us to secure your spot on one of our exciting tours. 
+            If you are joining the Everest Base Camp Trek or Yushan Peaks Trail, please be aware of the risks of high altitude sickness. 
+            We are here to help if you wish for more information on our tours and preparation for high altitude treks.
+          </p>
+        </div>
+      </section>
+  
+      <section id="comments">
+        <h2>Comments</h2>
+        <hr>
+        <div class="comments-container"></div>
+        <hr>
+        <h6 class="call-for-comments">We appreciate hearing your thoughts. Leave a comment below!</h6>
+        <form novalidate>
+          <div>
+            <label for="new-email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="new-email" placeholder="name@example.com" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div>
+            <label for="new-comment" class="form-label">Comment</label>
+            <textarea class="form-control" id="new-comment" rows="3" required></textarea>
+            <div class="invalid-feedback">Please leave your comment here.</div>
+          </div>
+          <div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="comment-color" id="comment-color-red" value="red" required>
+              <label class="form-check-label" for="comment-color-red">Red</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="comment-color" id="comment-color-green" value="green" required>
+                <label class="form-check-label" for="comment-color-green">Green</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="comment-color" id="comment-color-yellow" value="yellow" required>
+                <label class="form-check-label" for="comment-color-yellow">Yellow</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="comment-color" id="comment-color-blue" value="blue" required>
+                <label class="form-check-label" for="comment-color-blue">Blue</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline-primary">Add Comment</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+        <p class="logo">Vistá</p>
+        <p><i class="bi bi-envelope"></i>&emsp;&emsp;info@vistá.com</p>
+        <p><i class="bi bi-telephone"></i>&emsp;&emsp;(852) 9622 5483</p>
+        <p><i class="bi bi-geo-alt"></i>&emsp;&emsp;Room1028, Ho Sin-Hang Engineering Building,
+          The Chinese University of Hong Kong</p>
+        <p><i class="bi bi-image"></i>&emsp;&emsp;image reference:
+          <a target="_blank" href="https://en.wikipedia.org/wiki/File:1_dolomites_santa_magdalena_2024_val_di_funes.jpg">Wikipedia (the Dolomites)</a>, 
+          <a target="_blank" href="https://images.chinatimes.com/newsphoto/2022-01-11/1024/20220111001264.jpg">China Times (Yushan)</a>, 
+          my own photos
+        <p>
+    </footer>
+</body>
+</html>
