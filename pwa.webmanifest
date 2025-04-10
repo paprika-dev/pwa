@@ -2,7 +2,15 @@
     "name": "Vistá Travel Agency",
     "short_name": "Vistá",
     "description": "pwa testing.",
-    "start_url": "/index.html",
+    "start_url": "/pwa/index.html",
+    "icons": [
+        {
+          "src": "images/icon.svg",
+          "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ],
     "display": "fullscreen",
     "theme_color": "#B12A34",
     "background_color": "#B12A34"
